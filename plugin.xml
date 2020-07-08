@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="fuck.face.custom" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+  <name>FuckFace</name>
+  <!-- 插件描述 -->
+  <description>Description</description>
+  <js-module name="FuckFace" src="www/FuckFace.js">
+    <clobbers target="cordova.plugins.FuckFace" />
+  </js-module>
+  <platform name="android">
+    <config-file parent="/*" target="res/xml/config.xml">
+      <feature name="FuckFace">
+        <param name="android-package" value="fuck.face.custom.FuckFace" />
+      </feature>
+    </config-file>
+    <config-file parent="/manifest" target="AndroidManifest.xml">
+      <uses-permission android:name="android.permission.INTERNET"/>
+      <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+      <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+      <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+      <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+      <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+      <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+      <!-- <activity android:name="com.tencent.wxpayface.WxPayFace"></activity>
+      <activity android:name="com.tencent.wxpayface.IWxPayfaceCallback"></activity> -->
+    </config-file>
+		<source-file src="src/android/wxfacepay-release.aar" target-dir="libs"/>
+    <framework src="src/android/wxfacepay-release.gradle" custom="true" type="gradleReference" />
+    <source-file src="src/android/FuckFace.java" target-dir="src/fuck/face/custom/FuckFace" />
+		<source-file src="src/android/classes.jar" target-dir="libs"/>
+    <!-- <resource-file src="src/android/wxfacepay-release.aar" target="libs/wxfacepay-release.aar" /> -->
+    <resource-file src="aar/wxfacepay-release.aar" target="libs/wxfacepay-release.aar" />
+  </platform>
+</plugin>
