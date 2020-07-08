@@ -6,7 +6,9 @@ app运行环境: 自助收银机
 
 开发环境
     @ionic/cli-utils  : 1.9.2
+    
     ionic (Ionic CLI) : 3.9.2
+    
 
 System:
     Node    : v8.9.1
